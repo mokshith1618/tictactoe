@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tictactoe</title>
+
+    <style>
+        .container {
+            padding-top:20px;
+            min-height: 100vh;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border:2px solid grey;
+            min-height: 130px;
+            min-width: 130px;
+            text-align: center;
+        }
+        #res{
+            color: red;
+        }
+        button{
+            font-size: 30px;
+            margin: 20px;
+            height:50px;
+            width: 150px;
+            padding: 5px;
+            border-radius: 5px;
+            border:1px solid grey;
+            background-color:rgba(210, 223, 228, 0.763);
+        }
+        .input{
+            margin: 10px;
+            width: 100px;
+            height:30px;
+        }
+        .vertical{
+            height:50px;
+            margin-right: 10px;
+            border-left: 2px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to tictactoe!</h1>
+        <div style="display:flex;flex-direction:row;justify-content: space-between;">
+            <div style="display:flex;flex-direction:row;justify-content: centre;align-items:center">
+            <p>Enter Player1 name:</p>
+            <input type="text" id="player1" class="input">
+            </div>
+            <h1 class="vertical"></h1>
+            <div style="display:flex;flex-direction:row;justify-content: centre;align-items:center">
+                <p>Enter Player2 name:</p>
+                <input type="text" id="player2" class="input">
+                </div>
+        </div>
+        <h1 id="res"></h1>
+        <div class="row">
+            <div class="box" id="1"></div>
+            <div class="box" id="2"></div>
+            <div class="box" id="3"></div>
+        </div>
+        <div class="row">
+            <div class="box" id="4"></div>
+            <div class="box" id="5"></div>
+            <div class="box" id="6"></div>
+        </div>
+        <div class="row">
+            <div class="box" id="7"></div>
+            <div class="box" id="8"></div>
+            <div class="box" id="9"></div>
+        </div>
+        <button id="btn">Reload</button>
+    </div>
+    <script src="tictactoe.js"></script>
+</body>
+</html>
+
+
+
