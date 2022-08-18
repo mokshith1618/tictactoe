@@ -9,7 +9,8 @@ let box8=document.getElementById("8");
 let box9=document.getElementById("9");
 let res=document.getElementById("res")
 let btn=document.getElementById("btn")
-btn.onclick=()=>{
+let item=1
+let clearBoard=()=>{
     box1.textContent=""
     box2.textContent="" 
     box3.textContent=""
@@ -19,6 +20,10 @@ btn.onclick=()=>{
     box7.textContent=""
     box8.textContent=""
     box9.textContent=""
+}
+btn.onclick=()=>{
+    item=1
+    clearBoard()
 }
 let players={
     0:"player1",
@@ -32,7 +37,6 @@ player1.addEventListener("change",(event)=>{
 player2.addEventListener("change",(event)=>{
     players[1]=player2.value
 })
-let item=1
 let onCheck=()=>{
     if((box1.textContent==box2.textContent && box2.textContent==box3.textContent && box3.textContent!="")
         ||(box4.textContent==box5.textContent && box5.textContent==box6.textContent && box6.textContent!="")|| 
@@ -50,19 +54,25 @@ let onCheck=()=>{
                 res.style.color="green";
                 res.textContent=players[1]+" Win!!"
             }
+            return true
     }
     else if(box1.textContent!="" && box2.textContent!="" && box3.textContent!=""&& box4.textContent!=""
     && box5.textContent!=""&& box6.textContent!=""&& box7.textContent!=""&& box8.textContent!=""
     && box9.textContent!=""){
         res.style.color="yellow";
         res.textContent="It's a Tie!!"
+        return true
     }
+    return false
 }
 let click=(box)=>{
     let head=document.createElement("h1")
     if(box.textContent!=""){
         res.style.color="red";
         res.textContent="The box is Already filled!!"
+        return
+    }
+    if(onCheck()===true){
         return
     }
     res.textContent=""
