@@ -43,21 +43,25 @@ let onCheck=()=>{
         (box1.textContent==box5.textContent && box5.textContent==box9.textContent && box9.textContent!="")||
         (box3.textContent==box5.textContent && box5.textContent==box7.textContent && box7.textContent!="")){
             if(item==0){
+                res.style.color="green";
                 res.textContent=players[0]+" Win!!"
             }
             else{
+                res.style.color="green";
                 res.textContent=players[1]+" Win!!"
             }
     }
     else if(box1.textContent!="" && box2.textContent!="" && box3.textContent!=""&& box4.textContent!=""
     && box5.textContent!=""&& box6.textContent!=""&& box7.textContent!=""&& box8.textContent!=""
     && box9.textContent!=""){
+        res.style.color="yellow";
         res.textContent="It's a Tie!!"
     }
 }
 let click=(box)=>{
     let head=document.createElement("h1")
     if(box.textContent!=""){
+        res.style.color="red";
         res.textContent="The box is Already filled!!"
         return
     }
