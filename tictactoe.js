@@ -10,11 +10,6 @@ let box9=document.getElementById("9");
 let res=document.getElementById("res")
 let btn=document.getElementById("btn")
 let item=1
-let regexp = /android|iphone|kindle|ipad/i
-let isMobileDevice = regexp.test(details);
-if (isMobileDevice) {
-    alert("Open the site in Desktop mode")
-} 
 let clearBoard=()=>{
     box1.textContent=""
     box2.textContent="" 
