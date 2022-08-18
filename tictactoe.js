@@ -23,7 +23,9 @@ let clearBoard=()=>{
 }
 btn.onclick=()=>{
     item=1
+    res.textContent=""
     clearBoard()
+    
 }
 let players={
     0:"player1",
